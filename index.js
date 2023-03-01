@@ -42,7 +42,6 @@ exports.deterministicPartitionKey = (event) => {
         ? JSON.stringify(event.partitionKey)
         : event.partitionKey;
 
-    console.log(candidate);
     // Here I'm not sure if the stringify(partitionKey) could be greater then MAX_PARTITION_KEY_LENGTH
     // That is why I will keep this validation
     return candidate.length > MAX_PARTITION_KEY_LENGTH
